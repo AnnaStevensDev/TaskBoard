@@ -1,0 +1,16 @@
+﻿<Window x:Class="NotTrello_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotTrello_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" Text="Not Trello" VerticalAlignment="Top"/>
+        <RadioButton x:Name="LeftButton" IsChecked="True" HorizontalAlignment="Left" Margin="283,91,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="RightButton" HorizontalAlignment="Left" Margin="499,91,0,0" VerticalAlignment="Top"/>
+        <Button Content="This is a Button" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Window>
