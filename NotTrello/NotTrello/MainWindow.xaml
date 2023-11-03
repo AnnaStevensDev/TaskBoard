@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotTrello"
         mc:Ignorable="d"
-        Title="NotTrello" Height="1080" Width="1920"
+        Title="NotTrello"
+        Width ="1920"
+        Height= "895"
         WindowState = "Maximized"
-        WindowStyle= "None">
+        WindowStyle= "None"
+        Topmost="True"
+        >
     <Window.Background>
         <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
             <GradientStop Color="#FF144A4A" Offset="0.0" />
@@ -15,10 +19,10 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <Grid>
+    <Grid Margin="0,0,0,10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="142"/>
-            <RowDefinition Height="938"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".9*"/>
         </Grid.RowDefinitions>
         <Border  CornerRadius= "20"  Background="#FF02131F"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="600"  Opacity=".85">
             <TextBlock x:Name="BoardName" 
@@ -33,7 +37,7 @@
                 [BOARD NAME]
             </TextBlock>
         </Border>
-        <Grid x:Name="MainGrid" Height="938" VerticalAlignment="Top" Grid.Row="1">
+        <Grid x:Name="MainGrid" Height="806" VerticalAlignment="Top" Margin="0,10,0,0" Grid.Row="1">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -49,7 +53,6 @@
                     <GradientStop Color="#002060" Offset="0.85" />
                 </LinearGradientBrush>
             </Grid.Background>
-
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="0" Opacity=".90">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
@@ -57,20 +60,40 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold">
-
-                </TextBlock>
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
             </Border>
+              
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="1" Opacity=".90">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
@@ -78,17 +101,39 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
+                
             </Border>
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="2" Opacity=".90">
                 <Border.Background>
@@ -97,17 +142,38 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
             </Border>
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="3" Opacity=".90">
                 <Border.Background>
@@ -116,17 +182,38 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
             </Border>
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="4" Opacity=".90">
                 <Border.Background>
@@ -135,17 +222,38 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
             </Border>
             <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="5" Opacity=".90">
                 <Border.Background>
@@ -154,20 +262,39 @@
                         <GradientStop Color="#FF06121C" Offset="0.85" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock 
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"
-                TextWrapping="Wrap"
-                Text="[Lane Name]"
-                VerticalAlignment="Top"
-                FontSize="30"
-                Foreground="LimeGreen"
-                TextAlignment="Center"
-                Padding="10,0,10,10" 
-                FontFamily="Arial Rounded MT Bold"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".075*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".075*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0"
+                        TextWrapping="Wrap"
+                        Text="[Lane Name]"
+                        VerticalAlignment="Top"
+                        FontSize="30"
+                        Foreground="LimeGreen"
+                        TextAlignment="Center"
+                        Padding="10,0,10,10" 
+                        FontFamily="Arial Rounded MT Bold">
+                    </TextBlock>
+                    <Button 
+                        Grid.Row="2" 
+                        Background="{x:Null}"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="LimeGreen"
+                        Padding="10,10,10,10" 
+                        FontFamily="Arial Rounded MT Bold"
+                        BorderThickness="0"
+                    >
+                        +Add Task
+                    </Button>
+                </Grid>
             </Border>
-
-
         </Grid>
     </Grid>
 </Window>
