@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="NotTrello" Height="1080" Width="1920">
 
-    <Grid x:Name="MainGrid" Margin="0">
+
+    <Grid x:Name="MainGrid" Margin="0" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -16,6 +17,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Color="#FF50EDC5" Offset="0.0" />
+                <GradientStop Color="#FF24415B" Offset="0.85" />
+
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 
 </Window>
