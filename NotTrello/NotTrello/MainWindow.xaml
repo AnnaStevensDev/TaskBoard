@@ -5,25 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotTrello"
         mc:Ignorable="d"
-        Title="NotTrello" Height="1080" Width="1920">
+        Title="NotTrello" Height="1080" Width="1920"
+        Background="#FF213547"
+        WindowState = "Maximized"
+        WindowStyle= "None">
 
 
-    <Grid x:Name="MainGrid" Margin="0" >
+    <Grid x:Name="MainGrid" Margin="0,132,0,0" Height="938" VerticalAlignment="Top" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
-                <GradientStop Color="#FF50EDC5" Offset="0.0" />
-                <GradientStop Color="#FF24415B" Offset="0.85" />
-
+                <GradientStop Color="#35E6EF" Offset="0.0" />
+                <GradientStop Color="#002060" Offset="0.85" />
             </LinearGradientBrush>
         </Grid.Background>
+
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="0" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel>
+
+            </StackPanel>
+        </Border>
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="1" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel/>
+        </Border>
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="2" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel/>
+        </Border>
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="3" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel/>
+        </Border>
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="4" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel/>
+        </Border>
+        <Border CornerRadius= "10" Margin= "20,40,20,50" Grid.Column="5" Opacity=".90">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#FF041F18" Offset="0.0" />
+                    <GradientStop Color="#FF06121C" Offset="0.85" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel/>
+        </Border>
+
+
     </Grid>
 
 </Window>
