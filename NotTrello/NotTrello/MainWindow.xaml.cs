@@ -31,6 +31,18 @@ namespace NotTrello
             if (e.Key == Key.Escape)
                 this.Close();
         }
+
+        private void Button_Click()
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TaskWindow taskWindow = new TaskWindow();
+            taskWindow.Show();
+            taskWindow.Activate();
+        }
     }
     
 

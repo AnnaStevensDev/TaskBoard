@@ -10,7 +10,6 @@
         Height= "895"
         WindowState = "Maximized"
         WindowStyle= "None"
-        Topmost="True"
         >
     <Window.Background>
         <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
@@ -265,7 +264,7 @@
                         >
                         <StackPanel Margin="0,10,0,0">
                             <Border  Padding ="10" Height="80">
-                                <Button Background="#FF369336" Content="Task a" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
+                                <Button Background="#FF369336" Content="Task a" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0" Click="Button_Click">
                                     <Button.Resources>
                                         <Style TargetType="Border">
                                             <Setter Property="CornerRadius" Value="5"/>
