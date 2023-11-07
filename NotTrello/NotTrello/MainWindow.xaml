@@ -196,6 +196,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
+        <Style TargetType="Button" x:Key="TaskButton">
+            <Setter Property="Background" Value="#FF369336"/>
+            <Setter Property="Content" Value="New Task"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT"/>
+            <Setter Property="BorderThickness" Value ="0"/>
+            <EventSetter Event="Click" Handler="Button_Click"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+
+        </Style>
+
+        <Style TargetType="Border" x:Key="TaskBorder">
+            <Setter Property="BorderThickness" Value =" 10"/>
+            <Setter Property="Height" Value="80"/>
+        </Style>
+
     </Window.Resources>
 
     <Grid Margin="0,0,0,10">
@@ -262,8 +285,8 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
-                            <Border  Padding ="10" Height="80">
+                        <StackPanel x:Name="lane0" Margin="0,10,0,0">
+                            <Border  BorderThickness ="10" Height="80">
                                 <Button Background="#FF369336" Content="Task a" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0" Click="Button_Click">
                                     <Button.Resources>
                                         <Style TargetType="Border">
@@ -273,12 +296,7 @@
                                 </Button>
                             </Border>
                             <Border  Padding ="10" Height="80">
-                                <Button Background="#FFDC2323" Content="Task b" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
+                                <Button Style="{DynamicResource TaskButton}">
                                 </Button>
                             </Border>
                             <Border  Padding ="10" Height="80">
@@ -365,6 +383,7 @@
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask0"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -373,6 +392,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                        Click="AddTaskLane0"
                     >
                         +Add Task
                     </Button>
@@ -409,7 +429,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
+                        <StackPanel x:Name="lane1" Margin="0,10,0,0">
                             <Border  Padding ="10" Height="80">
                                 <Button Background="#FFEBBE48" Content="Task c" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
                                     <Button.Resources>
@@ -431,6 +451,7 @@
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask1"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -439,6 +460,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                         Click="AddTaskLane1"
                     >
                         +Add Task
                     </Button>
@@ -475,7 +497,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
+                        <StackPanel x:Name="lane2" Margin="0,10,0,0">
                             <Border  Padding ="10" Height="80">
                                 <Button Background="#FF2A5DBB" Content="Task e" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
                                     <Button.Resources>
@@ -506,6 +528,7 @@
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask2"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -514,6 +537,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                         Click="AddTaskLane2"
                     >
                         +Add Task
                     </Button>
@@ -549,7 +573,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
+                        <StackPanel x:Name="lane3" Margin="0,10,0,0">
                             <Border  Padding ="10" Height="80">
                                 <Button Background="#FFDC2323" Content="Task h" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
                                     <Button.Resources>
@@ -562,6 +586,7 @@
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -570,6 +595,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                         Click="AddTaskLane3"
                     >
                         +Add Task
                     </Button>
@@ -605,10 +631,11 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
+                        <StackPanel x:Name="lane4" Margin="0,10,0,0">
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask4"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -617,6 +644,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                         Click="AddTaskLane4"
                     >
                         +Add Task
                     </Button>
@@ -662,10 +690,11 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel Margin="0,10,0,0">
+                        <StackPanel x:Name="lane5" Margin="0,10,0,0">
                         </StackPanel>
                     </ScrollViewer>
                     <Button 
+                        x:Name="addTask5"
                         Grid.Row="2" 
                         Background="{x:Null}"
                         VerticalAlignment="Top"
@@ -674,6 +703,7 @@
                         Padding="10,10,10,10" 
                         FontFamily="Arial Rounded MT Bold"
                         BorderThickness="0"
+                         Click="AddTaskLane5"
                     >
                         +Add Task
                     </Button>

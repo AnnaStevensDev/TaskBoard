@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace NotTrello
 {
@@ -24,6 +25,7 @@ namespace NotTrello
         {
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+            
         }
 
         private void HandleEsc(object sender, KeyEventArgs e)
@@ -32,16 +34,53 @@ namespace NotTrello
                 this.Close();
         }
 
-        private void Button_Click()
-        {
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TaskWindow taskWindow = new TaskWindow();
             taskWindow.Show();
             taskWindow.Activate();
+        }
+
+        private Border AddNewTask()
+        {
+            Style taskButtonStyle = (Style)FindResource("TaskButton") as Style;
+            Style taskBorderStyle = (Style)FindResource("TaskBorder") as Style;
+            Border taskBorder = new Border();
+            Button taskButton = new Button();
+            taskBorder.Style = taskBorderStyle;
+            taskButton.Style = taskButtonStyle;
+            taskBorder.Child = taskButton;
+            return taskBorder;
+        }
+        private void AddTaskLane0(object sender, RoutedEventArgs e)
+        {
+            lane0.Children.Add(AddNewTask());
+        }
+
+        private void AddTaskLane1(object sender, RoutedEventArgs e)
+        {
+            lane1.Children.Add(AddNewTask());
+        }
+
+        private void AddTaskLane2(object sender, RoutedEventArgs e)
+        {
+            lane2.Children.Add(AddNewTask());
+        }
+
+        private void AddTaskLane3(object sender, RoutedEventArgs e)
+        {
+            lane3.Children.Add(AddNewTask());
+        }
+
+        private void AddTaskLane4(object sender, RoutedEventArgs e)
+        {
+            lane4.Children.Add(AddNewTask());
+        }
+
+        private void AddTaskLane5(object sender, RoutedEventArgs e)
+        {
+            lane5.Children.Add(AddNewTask());
         }
     }
     
