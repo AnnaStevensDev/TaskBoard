@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NotTrello",
+    "\\NotTrello\\NotTrello",
+    "\\NotTrello\\NotTrello\\bin",
+    "\\NotTrello\\NotTrello\\bin\\Debug",
+    "\\NotTrello\\NotTrello\\bin\\Debug\\net7.0-windows",
+    "\\NotTrello\\NotTrello\\bin\\Release"
   ],
-  "SelectedNode": "\\C:\\Users\\matth\\Source\\Repos\\NotTrello",
+  "SelectedNode": "\\NotTrello\\NotTrello.sln",
   "PreviewInSolutionExplorer": false
 }
