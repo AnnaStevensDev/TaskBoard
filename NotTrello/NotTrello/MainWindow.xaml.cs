@@ -82,6 +82,7 @@ namespace NotTrello
         {
             lane5.Children.Add(AddNewTask());
         }
+
     }
     
 

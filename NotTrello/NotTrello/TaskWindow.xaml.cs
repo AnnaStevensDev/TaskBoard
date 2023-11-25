@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Haley.Utils;
+using System.Diagnostics;
 
 namespace NotTrello
 {
@@ -37,11 +38,18 @@ namespace NotTrello
 
         }
 
+        // Value save button event
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Debug.Print("Name: " + taskName.Text);
+            Debug.Print("Description: " + taskDescription.Text);
+            Debug.Print("Ticket Number: " + ticketNumber.Text);
+            Debug.Print("Date: " + dateToggle.Text);
+            Debug.Print("Color: " + taskColor.SelectedColor);
+            Debug.Print("Status: " + taskPanel.Content);
         }
 
+        // Window close button event
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Close();
