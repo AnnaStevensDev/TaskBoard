@@ -41,12 +41,19 @@ namespace NotTrello
         // Value save button event
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Debug.Print("Name: " + taskName.Text);
-            Debug.Print("Description: " + taskDescription.Text);
-            Debug.Print("Ticket Number: " + ticketNumber.Text);
-            Debug.Print("Date: " + dateToggle.Text);
-            Debug.Print("Color: " + taskColor.SelectedColor);
-            Debug.Print("Status: " + taskPanel.Content);
+            string name = taskName.Text;
+            string description = taskDescription.Text;
+            string ticket = ticketNumber.Text;
+            Color color = taskColor.SelectedColor;
+            DateTime date = dateToggle.DisplayDate;
+            object status = taskPanel.Content;
+
+            Debug.Print("Name: " + name);
+            Debug.Print("Description: " + description);
+            Debug.Print("Ticket Number: " + ticket);
+            Debug.Print("Date: " + date);
+            Debug.Print("Color: " + color);
+            Debug.Print("Status: " + status);
         }
 
         // Window close button event
