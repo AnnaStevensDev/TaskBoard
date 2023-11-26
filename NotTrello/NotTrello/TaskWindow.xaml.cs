@@ -100,7 +100,7 @@ namespace NotTrello
             if (taskButton != null)
             {
                 ((Button)taskButton).Background = new SolidColorBrush(color);
-                ((Button)taskButton).Name = name;
+                ((Button)taskButton).Content = name;
 
             }
 
