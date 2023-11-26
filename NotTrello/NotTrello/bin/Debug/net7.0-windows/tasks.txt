@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Task>
+    <TaskID>0</TaskID>
+    <Name>Task a</Name>
+    <Description>Description...</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>51</R>
+      <G>255</G>
+      <B>120</B>
+      <ScA>1</ScA>
+      <ScR>0.033104766</ScR>
+      <ScG>1</ScG>
+      <ScB>0.18782078</ScB>
+    </TaskColor>
+    <Date>2023-11-25T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:string">0</Status>
+  </Task>
+</ArrayOfTask>

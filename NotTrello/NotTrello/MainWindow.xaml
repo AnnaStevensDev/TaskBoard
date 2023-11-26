@@ -111,7 +111,7 @@
                         >
                         <StackPanel x:Name="lane0" Margin="0,10,0,0">
                             <Border  Padding ="10" Height="80">
-                                <Button Style="{DynamicResource TaskButton}" Content ="Task a">
+                                <Button Tag="0" Style="{DynamicResource TaskButton}" Content ="Task a">
                                 </Button>
                             </Border>
                         </StackPanel>

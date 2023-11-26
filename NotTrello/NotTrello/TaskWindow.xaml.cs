@@ -22,9 +22,28 @@ namespace NotTrello
     /// </summary>
     public partial class TaskWindow : Window
     {
-        public TaskWindow()
+        object taskButton = null;
+
+        public TaskWindow(object sender)
         {
             InitializeComponent();
+
+            taskButton = sender;
+
+            List<Task> tasks = XMLFileManagement.ReadTasks();
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i] == Save.Tag)
+                {
+                    taskName.Text = tasks[i].Name;
+                    taskDescription.Text = tasks[i].Description;
+                    ticketNumber.Text = tasks[i].TicketNumber;
+                    taskColor.SelectedColor = tasks[i].TaskColor;
+                    dateToggle.DisplayDate = tasks[i].Date;
+                    taskPanel.Tag = tasks[i].Status;
+                    break;
+                }
+            }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -38,22 +57,53 @@ namespace NotTrello
 
         }
 
-        // Value save button event
+        // Save button event
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            int taskID = (int)((Button)sender).Tag;
             string name = taskName.Text;
             string description = taskDescription.Text;
             string ticket = ticketNumber.Text;
             Color color = taskColor.SelectedColor;
             DateTime date = dateToggle.DisplayDate;
-            object status = taskPanel.Content;
+            object status = int.Parse((string)taskPanel.Tag);
 
-            Debug.Print("Name: " + name);
-            Debug.Print("Description: " + description);
-            Debug.Print("Ticket Number: " + ticket);
-            Debug.Print("Date: " + date);
-            Debug.Print("Color: " + color);
-            Debug.Print("Status: " + status);
+            List<Task> tasks = XMLFileManagement.ReadTasks();
+            
+            Task task = null;
+            int t = 0;
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].TaskID == taskID)
+                {
+                    t = i;
+                    task = tasks[i];
+                    break;
+                }
+            }
+            if (task == null)
+            {
+                task = new Task(taskID, name, description, ticket, color, date, status);
+                tasks.Add(task);
+            }
+            else
+            {
+                tasks[t].Name = name;
+                tasks[t].Description = description;
+                tasks[t].TicketNumber = ticket;
+                tasks[t].TaskColor = color;
+                tasks[t].Date = date;
+            }
+
+            if (taskButton != null)
+            {
+                ((Button)taskButton).Background = new SolidColorBrush(color);
+            }
+
+            XMLFileManagement.SaveTasks(tasks);
+            
+            
+
         }
 
         // Window close button event

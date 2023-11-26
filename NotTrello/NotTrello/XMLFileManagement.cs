@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -10,7 +11,8 @@ namespace NotTrello
 {
 	class XMLFileManagement
 	{
-		static string path = "tasks.txt";
+		static string location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		static string path = location + "/tasks.txt";
 
 		public static void SaveTasks(List<Task> t)
 		{

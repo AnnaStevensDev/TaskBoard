@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace NotTrello
 {
@@ -14,9 +14,8 @@ namespace NotTrello
         public string Description { get; set; }
         public string TicketNumber { get; set; }
         public Color TaskColor { get; set; }
-        public DateTime TaskDate { get; set; }
-        public object TaskStatus { get; set; }
-
+        public DateTime Date { get; set; }
+        public object Status { get; set; }
 
         public Task(int taskID, string name, string description, string ticketNumber, Color color, DateTime date, object status)
         {
@@ -25,8 +24,30 @@ namespace NotTrello
             Description = description;
             TicketNumber = ticketNumber;
             TaskColor = color;
-            TaskDate = date;
-            TaskStatus = status;
+            Date = date;
+            Status = status;
+        }
+
+        public Task()
+        {
+            TaskID = 00000000;
+            Name = "New Task";
+            Description = "description...";
+            TicketNumber = "XXXXXXXX";
+            TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
+            Date = DateTime.Today;
+            Status = 0;
+        }
+
+        public Task(int taskID)
+        {
+            TaskID = taskID;
+            Name = "New Task";
+            Description = "description...";
+            TicketNumber = "XXXXXXXX";
+            TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
+            Date = DateTime.Today;
+            Status = null;
         }
     }
 }
