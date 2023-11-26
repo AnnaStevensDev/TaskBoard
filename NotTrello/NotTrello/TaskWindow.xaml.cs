@@ -29,23 +29,6 @@ namespace NotTrello
             InitializeComponent();
 
             taskButton = sender;
-
-            /*
-            List<Task> tasks = XMLFileManagement.ReadTasks();
-            for (int i = 0; i < tasks.Count; i++)
-            {
-                if (tasks[i] == Save.Tag)
-                {
-                    taskName.Text = tasks[i].Name;
-                    taskDescription.Text = tasks[i].Description;
-                    ticketNumber.Text = tasks[i].TicketNumber;
-                    taskColor.SelectedColor = tasks[i].TaskColor;
-                    dateToggle.DisplayDate = tasks[i].Date;
-                    taskPanel.Tag = tasks[i].Status;
-                    break;
-                }
-            }
-            */
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

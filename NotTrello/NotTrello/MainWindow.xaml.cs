@@ -44,7 +44,7 @@ namespace NotTrello
                 taskID = tasks[i].TaskID;
                 taskName = tasks[i].Name;
                 taskColor = tasks[i].TaskColor;
-                status = int.Parse((string)tasks[i].Status); ;
+                status = int.Parse((string)tasks[i].Status);
                 if (status == 0)
                 {
                     lane0.Children.Add(ReloadTask(taskID, taskName, taskColor));
@@ -111,7 +111,35 @@ namespace NotTrello
                     taskWindow.ticketNumber.Text = tasks[i].TicketNumber;
                     taskWindow.taskColor.SelectedColor = tasks[i].TaskColor;
                     taskWindow.dateToggle.DisplayDate = tasks[i].Date;
-                    taskWindow.taskPanel.Tag = tasks[i].Status;
+                    
+                    int status = int.Parse((string)tasks[i].Status);
+                    taskWindow.taskPanel.Tag = status;
+                    string laneName = "";
+                    if (status == 0)
+                    {
+                        laneName = laneName0.Text;
+                    }
+                    else if (status == 1)
+                    {
+                        laneName = laneName1.Text;
+                    }
+                    else if (status == 2)
+                    {
+                        laneName = laneName2.Text;
+                    }
+                    else if (status == 3)
+                    {
+                        laneName = laneName3.Text;
+                    }
+                    else if (status == 4)
+                    {
+                        laneName = laneName4.Text;
+                    }
+                    else if (status == 5)
+                    {
+                        laneName = laneName5.Text;
+                    }
+                    taskWindow.taskPanel.Content = laneName;
                     break;
                 }
             }

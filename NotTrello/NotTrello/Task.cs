@@ -47,7 +47,7 @@ namespace NotTrello
             TicketNumber = "XXXXXXXX";
             TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
             Date = DateTime.Today;
-            Status = null;
+            Status = 0;
         }
     }
 }
