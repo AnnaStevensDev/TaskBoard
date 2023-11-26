@@ -100,6 +100,22 @@ namespace NotTrello
         {
             TaskWindow taskWindow = new TaskWindow(sender);
             taskWindow.Save.Tag = ((Button)sender).Tag;
+
+            List<Task> tasks = XMLFileManagement.ReadTasks();
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].TaskID == (int)taskWindow.Save.Tag)
+                {
+                    taskWindow.taskName.Text = tasks[i].Name;
+                    taskWindow.taskDescription.Text = tasks[i].Description;
+                    taskWindow.ticketNumber.Text = tasks[i].TicketNumber;
+                    taskWindow.taskColor.SelectedColor = tasks[i].TaskColor;
+                    taskWindow.dateToggle.DisplayDate = tasks[i].Date;
+                    taskWindow.taskPanel.Tag = tasks[i].Status;
+                    break;
+                }
+            }
+
             taskWindow.Show();
             taskWindow.Activate();
         }

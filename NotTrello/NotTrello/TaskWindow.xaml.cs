@@ -30,6 +30,7 @@ namespace NotTrello
 
             taskButton = sender;
 
+            /*
             List<Task> tasks = XMLFileManagement.ReadTasks();
             for (int i = 0; i < tasks.Count; i++)
             {
@@ -44,6 +45,7 @@ namespace NotTrello
                     break;
                 }
             }
+            */
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -98,6 +100,8 @@ namespace NotTrello
             if (taskButton != null)
             {
                 ((Button)taskButton).Background = new SolidColorBrush(color);
+                ((Button)taskButton).Name = name;
+
             }
 
             XMLFileManagement.SaveTasks(tasks);
