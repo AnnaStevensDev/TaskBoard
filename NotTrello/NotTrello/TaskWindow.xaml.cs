@@ -113,7 +113,7 @@ namespace NotTrello
 
         private void Move_Task(object sender, EventArgs e)
         {
-            if(MoveComboBox.SelectedIndex == (int)taskPanel.Tag)
+            if(MoveComboBox.SelectedIndex == (int)taskPanel.Tag || MoveComboBox.SelectedIndex == -1)
             {
                 return;
             }
@@ -129,9 +129,11 @@ namespace NotTrello
                     break;
                 }
             }
-           tasks[t].Status = MoveComboBox.SelectedIndex;
-           XMLFileManagement.SaveTasks(tasks);
-           ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
+            tasks[t].Status = MoveComboBox.SelectedIndex;
+            taskPanel.Tag = MoveComboBox.SelectedIndex;
+            taskPanel.Content = laneNames[MoveComboBox.SelectedIndex];
+            XMLFileManagement.SaveTasks(tasks);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
 
         }
 
