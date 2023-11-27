@@ -44,7 +44,7 @@ namespace NotTrello
                 taskID = tasks[i].TaskID;
                 taskName = tasks[i].Name;
                 taskColor = tasks[i].TaskColor;
-                status = int.Parse((string)tasks[i].Status);
+                status = (int)tasks[i].Status;
                 if (status == 0)
                 {
                     lane0.Children.Add(ReloadTask(taskID, taskName, taskColor));
@@ -112,7 +112,7 @@ namespace NotTrello
                     taskWindow.taskColor.SelectedColor = tasks[i].TaskColor;
                     taskWindow.dateToggle.DisplayDate = tasks[i].Date;
                     
-                    int status = int.Parse((string)tasks[i].Status);
+                    int status = (int)tasks[i].Status;
                     taskWindow.taskPanel.Tag = status;
                     string laneName = "";
                     if (status == 0)
@@ -148,7 +148,7 @@ namespace NotTrello
             taskWindow.Activate();
         }
 
-        private Border AddNewTask()
+        private Border AddNewTask(int status)
         {
             List<Task> tasks = XMLFileManagement.ReadTasks();
             int taskID = 0;
@@ -169,7 +169,7 @@ namespace NotTrello
             taskButton.Style = taskButtonStyle;
             taskButton.Tag = taskID;
 
-            Task task = new Task(taskID);
+            Task task = new Task(taskID, status);
             tasks.Add(task);
             XMLFileManagement.SaveTasks(tasks);
             
@@ -178,32 +178,32 @@ namespace NotTrello
         }
         private void AddTaskLane0(object sender, RoutedEventArgs e)
         {
-            lane0.Children.Add(AddNewTask());
+            lane0.Children.Add(AddNewTask(0));
         }
 
         private void AddTaskLane1(object sender, RoutedEventArgs e)
         {
-            lane1.Children.Add(AddNewTask());
+            lane1.Children.Add(AddNewTask(1));
         }
 
         private void AddTaskLane2(object sender, RoutedEventArgs e)
         {
-            lane2.Children.Add(AddNewTask());
+            lane2.Children.Add(AddNewTask(2));
         }
 
         private void AddTaskLane3(object sender, RoutedEventArgs e)
         {
-            lane3.Children.Add(AddNewTask());
+            lane3.Children.Add(AddNewTask(3));
         }
 
         private void AddTaskLane4(object sender, RoutedEventArgs e)
         {
-            lane4.Children.Add(AddNewTask());
+            lane4.Children.Add(AddNewTask(4));
         }
 
         private void AddTaskLane5(object sender, RoutedEventArgs e)
         {
-            lane5.Children.Add(AddNewTask());
+            lane5.Children.Add(AddNewTask(5));
         }
 
     }

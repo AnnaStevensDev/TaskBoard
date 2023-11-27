@@ -32,7 +32,7 @@ namespace NotTrello
         {
             TaskID = 00000000;
             Name = "New Task";
-            Description = "description...";
+            Description = "Description...";
             TicketNumber = "XXXXXXXX";
             TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
             Date = DateTime.Today;
@@ -43,11 +43,22 @@ namespace NotTrello
         {
             TaskID = taskID;
             Name = "New Task";
-            Description = "description...";
+            Description = "Description...";
             TicketNumber = "XXXXXXXX";
             TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
             Date = DateTime.Today;
             Status = 0;
+        }
+
+        public Task(int taskID, object status)
+        {
+            TaskID = taskID;
+            Name = "New Task";
+            Description = "Description...";
+            TicketNumber = "XXXXXXXX";
+            TaskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
+            Date = DateTime.Today;
+            Status = status;
         }
     }
 }

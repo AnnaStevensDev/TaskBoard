@@ -16,6 +16,6 @@
       <ScB>0.000607054</ScB>
     </TaskColor>
     <Date>2023-11-25T00:00:00-06:00</Date>
-    <Status xsi:type="xsd:string">0</Status>
+    <Status xsi:type="xsd:int">0</Status>
   </Task>
 </ArrayOfTask>

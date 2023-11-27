@@ -110,12 +110,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel x:Name="lane0" Margin="0,10,0,0">
-                            <Border  Padding ="10" Height="80">
-                                <Button Tag="0" Style="{DynamicResource TaskButton}" Content ="Task a">
-                                </Button>
-                            </Border>
-                        </StackPanel>
+                        <StackPanel x:Name="lane0" Margin="0,10,0,0"/>
                     </ScrollViewer>
                     <Button 
                         x:Name="addTask0"
@@ -165,26 +160,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel x:Name="lane1" Margin="0,10,0,0">
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FFEBBE48" Content="Task c" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FF369336" Content="Task d" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                        </StackPanel>
+                        <StackPanel x:Name="lane1" Margin="0,10,0,0"/>
                     </ScrollViewer>
                     <Button 
                         x:Name="addTask1"
@@ -234,35 +210,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel x:Name="lane2" Margin="0,10,0,0">
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FF2A5DBB" Content="Task e" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FFEBBE48" Content="Task f" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FFDC2323" Content="Task g" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                        </StackPanel>
+                        <StackPanel x:Name="lane2" Margin="0,10,0,0"/>
                     </ScrollViewer>
                     <Button 
                         x:Name="addTask2"
@@ -311,17 +259,7 @@
                         Grid.Row="1"
                         VerticalScrollBarVisibility="auto"
                         >
-                        <StackPanel x:Name="lane3" Margin="0,10,0,0">
-                            <Border  Padding ="10" Height="80">
-                                <Button Background="#FFDC2323" Content="Task h" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT" BorderThickness="0">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="5"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                        </StackPanel>
+                        <StackPanel x:Name="lane3" Margin="0,10,0,0"/>
                     </ScrollViewer>
                     <Button 
                         x:Name="addTask"
