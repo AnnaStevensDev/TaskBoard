@@ -51,7 +51,7 @@ namespace NotTrello
             string ticket = ticketNumber.Text;
             Color color = taskColor.SelectedColor;
             DateTime date = dateToggle.DisplayDate;
-            object status = int.Parse((string)taskPanel.Tag);
+            object status = taskPanel.Tag;
 
             List<Task> tasks = XMLFileManagement.ReadTasks();
             
