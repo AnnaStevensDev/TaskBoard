@@ -1,6 +1,27 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NotTrello" GeneratedClassName="NotTrelloSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LaneName0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 1</Value>
+    </Setting>
+    <Setting Name="LaneName1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 2</Value>
+    </Setting>
+    <Setting Name="LaneName2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 3</Value>
+    </Setting>
+    <Setting Name="LaneName3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 4</Value>
+    </Setting>
+    <Setting Name="LaneName4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 5</Value>
+    </Setting>
+    <Setting Name="LaneName5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lane 6</Value>
+    </Setting>
+    <Setting Name="BoardName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Board Name</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

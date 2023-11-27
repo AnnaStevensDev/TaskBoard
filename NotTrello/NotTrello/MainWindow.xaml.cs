@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace NotTrello
@@ -24,12 +26,32 @@ namespace NotTrello
     /// </summary>
     public partial class MainWindow : Window
     {
+        string[] laneNames = new string[6];
         public MainWindow()
         {
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+            laneText0.Text = NotTrelloSettings.Default.LaneName0;
+            laneText1.Text = NotTrelloSettings.Default.LaneName1;
+            laneText2.Text = NotTrelloSettings.Default.LaneName2;
+            laneText3.Text = NotTrelloSettings.Default.LaneName3;
+            laneText4.Text = NotTrelloSettings.Default.LaneName4;
+            laneText5.Text = NotTrelloSettings.Default.LaneName5;
+            boardText.Text = NotTrelloSettings.Default.BoardName;
+            laneNames[0] = laneText0.Text;
+            laneNames[1] = laneText1.Text;
+            laneNames[2] = laneText2.Text;
+            laneNames[3] = laneText3.Text;
+            laneNames[4] = laneText4.Text;
+            laneNames[5] = laneText5.Text;
+
             ReloadTasks();    
             
+        }
+
+        public string[] getLaneNames()
+        {
+            return laneNames;
         }
         
         private void ReloadTasks()
@@ -92,7 +114,19 @@ namespace NotTrello
         private void HandleEsc(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
+            {
+                // Save all changes to names
+                NotTrelloSettings.Default.BoardName = boardText.Text;
+                NotTrelloSettings.Default.LaneName0 = laneText0.Text;
+                NotTrelloSettings.Default.LaneName1 = laneText1.Text;
+                NotTrelloSettings.Default.LaneName2 = laneText2.Text;
+                NotTrelloSettings.Default.LaneName3 = laneText3.Text;
+                NotTrelloSettings.Default.LaneName4 = laneText4.Text;
+                NotTrelloSettings.Default.LaneName5 = laneText5.Text;
+
+                NotTrelloSettings.Default.Save();
                 this.Close();
+            }
         }
 
 
@@ -117,27 +151,27 @@ namespace NotTrello
                     string laneName = "";
                     if (status == 0)
                     {
-                        laneName = laneName0.Text;
+                        laneName = laneText0.Text;
                     }
                     else if (status == 1)
                     {
-                        laneName = laneName1.Text;
+                        laneName = laneText1.Text;
                     }
                     else if (status == 2)
                     {
-                        laneName = laneName2.Text;
+                        laneName = laneText2.Text;
                     }
                     else if (status == 3)
                     {
-                        laneName = laneName3.Text;
+                        laneName = laneText3.Text;
                     }
                     else if (status == 4)
                     {
-                        laneName = laneName4.Text;
+                        laneName = laneText4.Text;
                     }
                     else if (status == 5)
                     {
-                        laneName = laneName5.Text;
+                        laneName = laneText5.Text;
                     }
                     taskWindow.taskPanel.Content = laneName;
                     break;
@@ -206,7 +240,24 @@ namespace NotTrello
             lane5.Children.Add(AddNewTask(5));
         }
 
-    }
+
+        public void ResetLanes()
+        {
+            lane0.Children.Clear();
+            lane1.Children.Clear();
+            lane2.Children.Clear();
+            lane3.Children.Clear();
+            lane4.Children.Clear();
+            lane5.Children.Clear();
+            ReloadTasks();
+        }
+
+        public void MakeCopy(Task task)
+        {
+            ReloadTask(task.TaskID, task.Name, task.TaskColor);
+        }
+
     
+    }
 
 }

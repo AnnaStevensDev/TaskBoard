@@ -60,5 +60,11 @@ namespace NotTrello
             Date = DateTime.Today;
             Status = status;
         }
+
+        public Task Clone()
+        {
+            Task newTask = new Task(TaskID, Name,Description, TicketNumber, TaskColor, Date, Status);
+            return newTask;
+        }
     }
 }

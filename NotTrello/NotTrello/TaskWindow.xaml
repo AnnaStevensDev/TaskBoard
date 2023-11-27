@@ -11,6 +11,103 @@
         AllowsTransparency="True"
         Title="TaskWindow" Height="540" Width="436">
     <Window.Resources>
+        <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FF02131F" Offset="0.0"/>
+                    <GradientStop Color="#FF02131F" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FF02131F" />
+
+        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="2"
+  Background="{StaticResource NormalBrush}"
+  BorderThickness="1" />
+                <Border 
+  Grid.Column="0"
+  CornerRadius="2,0,0,2" 
+  Margin="1" 
+  Background="{StaticResource WindowBackgroundBrush}" 
+  BorderThickness="0,0,1,0" />
+                <Path 
+  x:Name="Arrow"
+  Grid.Column="1"     
+  HorizontalAlignment="Center"
+  VerticalAlignment="Center"
+  Data="M 0 0 L 4 4 L 8 0 Z"/>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="TextBox">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+        </ControlTemplate>
+
+
+        <Style x:Key="{x:Type ComboBox}" TargetType="ComboBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton 
+         Name="ToggleButton" 
+         Template="{StaticResource ComboBoxToggleButton}" 
+         Grid.Column="2" 
+         Focusable="false"
+         IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+         ClickMode="Press">
+                            </ToggleButton>
+                            <ContentPresenter
+        Name="ContentSite"
+        IsHitTestVisible="False" 
+        Margin="3,3,23,3"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Left" />
+                            <TextBox x:Name="PART_EditableTextBox"
+         Style="{x:Null}" 
+         Template="{StaticResource ComboBoxTextBox}" 
+         HorizontalAlignment="Left" 
+         VerticalAlignment="Center" 
+         Margin="3,3,23,3"
+         Focusable="True" 
+         Background="Transparent"
+         Visibility="Hidden"
+         IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup 
+        Name="Popup"
+        Placement="Bottom"
+        IsOpen="{TemplateBinding IsDropDownOpen}"
+        AllowsTransparency="True" 
+        Focusable="False"
+        PopupAnimation="Slide">
+                                <Grid 
+          Name="DropDown"
+          SnapsToDevicePixels="True"                
+          MinWidth="{TemplateBinding ActualWidth}"
+          MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+            x:Name="DropDownBorder"
+            Background="{StaticResource WindowBackgroundBrush}"
+            BorderThickness="1"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
+        </Style>
         <Style TargetType="{x:Type DatePicker}">
             <Setter Property="Foreground" Value="#FF333333"/>
             <Setter Property="IsTodayHighlighted" Value="True"/>
@@ -167,6 +264,22 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="CheckBox" x:Key="ActivityCheckBox">
+            <Setter Property="Foreground" Value= "LightSlateGray"/>
+            <Setter Property="BorderThickness" Value =" 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="ActivityTextBox">
+            <Setter Property="Foreground" Value= "LightSlateGray"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value =" 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Text" Value="New Activity"/>
+        </Style>
+
     </Window.Resources>
     <Window.Background>
         <SolidColorBrush Opacity="0.95" Color="#162a37"/>
@@ -191,9 +304,10 @@
         <Rectangle Grid.Row="0" Fill="#FF02131F" MouseLeftButtonDown="Window_MouseDown" Grid.ColumnSpan="2" Margin="308,0,0,0"/>
         <Grid Grid.Column="1" Margin="3,0,5,10" Grid.Row="3">
             <hw:ColorPickerButton Name ="taskColor" Background="#FF02131F" Content="Set Color" Foreground="#35E6EF" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Width="116" Mode="Mini"/>
-            <Button Background="#FF02131F" Content="Move To..." Foreground="#35E6EF" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click"/>
-            <Button Background="#FF02131F" Content="Copy To..." Foreground="#35E6EF" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,54,0,0" VerticalAlignment="Top" Width="116"/>
-            <Button Background="#FF02131F" Content="Delete" Foreground="#FFDC2323" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="116"/>
+            <ComboBox Name="MoveComboBox" Background="#FF02131F" Text="Move To..." Foreground="#35E6EF" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Width="116" DropDownClosed="Move_Task">
+            </ComboBox>
+            <TextBlock Text="Move To..." Foreground="#35E6EF" FontSize="14" FontFamily="Arial Rounded MT" Margin="22,32,10,148" IsHitTestVisible="False"/>
+            <Button Background="#FF02131F" Content="Delete" Foreground="#FFDC2323" FontSize="14" FontFamily="Arial Rounded MT" BorderThickness="0" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Width="116" Click="Delete_Task"/>
 
 
         </Grid>
@@ -208,7 +322,7 @@
         <Label Name="taskPanel" Tag="0" Content="[Lane Name]" Foreground="LimeGreen" FontSize="16" VerticalAlignment="Top" Height="31" FontFamily="arial rounded mt bold" Margin="308,25,0,0" Grid.ColumnSpan="2" Grid.Row="1" />
         <TextBox Name="ticketNumber" Text="XXXXXXXX" Foreground="LimeGreen" BorderThickness="0" Background="Transparent" FontSize="12" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width="253" Height="20" Margin="53,0,0,0"/>
         <TextBox Name="taskDescription" HorizontalAlignment="Center" Grid.Row="3" Background="#FF02131F" Foreground="DarkGray" BorderBrush="Black" TextWrapping="Wrap" Text="Description..." VerticalAlignment="Center" Width="289" Height="210"/>
-        <Label Content="+ Activities" Foreground="LimeGreen" FontSize="14" HorizontalAlignment="Left" Height="30" Margin="10,1,0,0" Grid.Row="4" VerticalAlignment="Top" Width="153" FontFamily="arial rounded mt bold"/>
+        <Button Background="Transparent" BorderBrush="Transparent" Content="+ Activities" Foreground="LimeGreen" FontSize="14" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Height="30" Margin="10,1,0,0" Grid.Row="4" VerticalAlignment="Top" Width="153" FontFamily="arial rounded mt bold" Click="Add_Activity"/>
 
         <DatePicker Name="dateToggle" Foreground="LimeGreen" Background ="#FF02131F" BorderThickness="0" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="114" Height="23" FontFamily="arial rounded mt bold" Grid.Column="1" Margin="6,0,0,0">
             <DatePicker.Resources>
@@ -219,14 +333,8 @@
             </DatePicker.Resources>
         </DatePicker>
 
-        <ListBox Grid.Row="4" Background="#FF02131F" Foreground="DarkGray" BorderBrush="Black" Margin="10,30,10,10" Grid.ColumnSpan="2" SelectionChanged="ListBox_SelectionChanged">
-            <ListBoxItem>Example 1.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 2.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 3.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 4.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 5.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 6.............................................................12/25</ListBoxItem>
-            <ListBoxItem>Example 7.............................................................12/25</ListBoxItem>
+        <ListBox Name="activities" Grid.Row="4" HorizontalContentAlignment="Stretch" SelectionMode="Multiple" Background="#FF02131F" Foreground="DarkGray" BorderBrush="Black" Margin="10,30,10,10" Grid.ColumnSpan="2" SelectionChanged="ListBox_SelectionChanged">
+
         </ListBox>
         <Button Grid.Column="1" Content="Cancel" Foreground="#35E6EF" Background="#FF02131F" BorderBrush="Black" HorizontalAlignment="Left" Height="28" Margin="16,0,0,0" Grid.Row="5" VerticalAlignment="Center" Width="47" RenderTransformOrigin="0.585,-1.16" Click="Button_Click_2"/>
         <Button Name ="Save" Grid.Column="1" Content="Save" Foreground="#35E6EF" Background="#FF02131F" BorderBrush="Black" HorizontalAlignment="Left" Height="28" Margin="67,0,0,0" Grid.Row="5" VerticalAlignment="Center" Width="48" RenderTransformOrigin="0.423,-0.741" Click="Button_Click_1"/>

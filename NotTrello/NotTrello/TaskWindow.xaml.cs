@@ -23,10 +23,17 @@ namespace NotTrello
     public partial class TaskWindow : Window
     {
         object taskButton = null;
+        string[]laneNames = ((MainWindow) System.Windows.Application.Current.MainWindow).getLaneNames();
 
         public TaskWindow(object sender)
         {
             InitializeComponent();
+            for (int i = 0; i < laneNames.Length; i++)
+            {
+                MoveComboBox.Items.Add(laneNames[i]);
+            }
+
+           
 
             taskButton = sender;
         }
@@ -35,11 +42,6 @@ namespace NotTrello
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         // Save button event
@@ -109,5 +111,73 @@ namespace NotTrello
 
         }
 
+        private void Move_Task(object sender, EventArgs e)
+        {
+            if(MoveComboBox.SelectedIndex == (int)taskPanel.Tag)
+            {
+                return;
+            }
+
+            int taskID = (int)Save.Tag;
+            List<Task> tasks = XMLFileManagement.ReadTasks();
+            int t = 0;
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].TaskID == taskID)
+                {
+                    t = i;
+                    break;
+                }
+            }
+           tasks[t].Status = MoveComboBox.SelectedIndex;
+           XMLFileManagement.SaveTasks(tasks);
+           ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
+
+        }
+
+        private void Delete_Task(object sender, RoutedEventArgs e)
+        {
+            int taskID = (int)Save.Tag;
+            List<Task> tasks = XMLFileManagement.ReadTasks();
+            int t = -1;
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].TaskID == taskID)
+                {
+                    t = i;
+                    break;
+                }
+            }
+            if (t != -1)
+            {
+                tasks.RemoveAt(t);
+            }
+            XMLFileManagement.SaveTasks(tasks);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
+        }
+
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Add_Activity(object sender, RoutedEventArgs e)
+        {
+
+            Style activityCheckBoxStyle = (Style)FindResource("ActivityCheckBox") as Style;
+            Style activityTextBoxStyle = (Style)FindResource("ActivityTextBox") as Style;
+            CheckBox activity = new CheckBox();
+            TextBox activityContent = new TextBox();
+            activity.Style = activityCheckBoxStyle;
+            activityContent.Style = activityTextBoxStyle;
+            activity.Content= activityContent;
+            activities.Items.Add(activity);
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,13 +13,97 @@ namespace NotTrello {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
-    internal sealed partial class NotTrelloSettings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class NotTrelloSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static NotTrelloSettings defaultInstance = ((NotTrelloSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new NotTrelloSettings())));
         
         public static NotTrelloSettings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 1")]
+        public string LaneName0 {
+            get {
+                return ((string)(this["LaneName0"]));
+            }
+            set {
+                this["LaneName0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 2")]
+        public string LaneName1 {
+            get {
+                return ((string)(this["LaneName1"]));
+            }
+            set {
+                this["LaneName1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 3")]
+        public string LaneName2 {
+            get {
+                return ((string)(this["LaneName2"]));
+            }
+            set {
+                this["LaneName2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 4")]
+        public string LaneName3 {
+            get {
+                return ((string)(this["LaneName3"]));
+            }
+            set {
+                this["LaneName3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 5")]
+        public string LaneName4 {
+            get {
+                return ((string)(this["LaneName4"]));
+            }
+            set {
+                this["LaneName4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lane 6")]
+        public string LaneName5 {
+            get {
+                return ((string)(this["LaneName5"]));
+            }
+            set {
+                this["LaneName5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Board Name")]
+        public string BoardName {
+            get {
+                return ((string)(this["BoardName"]));
+            }
+            set {
+                this["BoardName"] = value;
             }
         }
     }
