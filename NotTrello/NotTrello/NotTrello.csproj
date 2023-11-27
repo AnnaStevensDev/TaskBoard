@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <None Update="NotTrelloSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>NotTrelloSettings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

@@ -984,26 +984,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dayton\\.nuget\\packages\\": {}
+    "C:\\Users\\Anna\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dayton\\source\\repos\\NotTrello\\NotTrello\\NotTrello\\NotTrello.csproj",
+      "projectUniqueName": "C:\\Users\\Anna\\Source\\Repos\\captain-nemo-10994\\NotTrello\\NotTrello\\NotTrello\\NotTrello.csproj",
       "projectName": "NotTrello",
-      "projectPath": "C:\\Users\\Dayton\\source\\repos\\NotTrello\\NotTrello\\NotTrello\\NotTrello.csproj",
-      "packagesPath": "C:\\Users\\Dayton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dayton\\source\\repos\\NotTrello\\NotTrello\\NotTrello\\obj\\",
+      "projectPath": "C:\\Users\\Anna\\Source\\Repos\\captain-nemo-10994\\NotTrello\\NotTrello\\NotTrello\\NotTrello.csproj",
+      "packagesPath": "C:\\Users\\Anna\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anna\\Source\\Repos\\captain-nemo-10994\\NotTrello\\NotTrello\\NotTrello\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Dayton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1046,7 +1051,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

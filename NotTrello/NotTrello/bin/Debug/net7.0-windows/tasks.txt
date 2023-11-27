@@ -2,20 +2,254 @@
 <ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Task>
     <TaskID>0</TaskID>
-    <Name>Task a</Name>
+    <Name>Woah!</Name>
+    <Description>:D</Description>
+    <TicketNumber>1234567</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>219</R>
+      <G>54</G>
+      <B>54</B>
+      <ScA>1</ScA>
+      <ScR>0.7083758</ScR>
+      <ScG>0.036889452</ScG>
+      <ScB>0.036889452</ScB>
+    </TaskColor>
+    <Date>2023-11-25T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>1</TaskID>
+    <Name>ReImaging</Name>
+    <Description>Reimage each computer below, making sure to change the BIOS settings as per the standard reimaging process. Make sure to rename the original computer prior to reimaging.</Description>
+    <TicketNumber>123455445</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>218</R>
+      <G>33</G>
+      <B>33</B>
+      <ScA>1</ScA>
+      <ScR>0.7011019</ScR>
+      <ScG>0.015208516</ScG>
+      <ScB>0.015208516</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">0</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>2</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>3</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>1</TaskID>
+    <Name>New Task</Name>
     <Description>Description...</Description>
     <TicketNumber>XXXXXXXX</TicketNumber>
     <TaskColor>
       <A>255</A>
-      <R>0</R>
-      <G>255</G>
-      <B>2</B>
+      <R>50</R>
+      <G>205</G>
+      <B>50</B>
       <ScA>1</ScA>
-      <ScR>0</ScR>
-      <ScG>1</ScG>
-      <ScB>0.000607054</ScB>
+      <ScR>0.031896032</ScR>
+      <ScG>0.61049557</ScG>
+      <ScB>0.031896032</ScB>
     </TaskColor>
-    <Date>2023-11-25T00:00:00-06:00</Date>
-    <Status xsi:type="xsd:int">0</Status>
+    <Date>2023-11-27T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>1</TaskID>
+    <Name>New Task</Name>
+    <Description>Description...</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>50</R>
+      <G>205</G>
+      <B>50</B>
+      <ScA>1</ScA>
+      <ScR>0.031896032</ScR>
+      <ScG>0.61049557</ScG>
+      <ScB>0.031896032</ScB>
+    </TaskColor>
+    <Date>2023-11-27T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>1</TaskID>
+    <Name>New Task</Name>
+    <Description>Description...</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>50</R>
+      <G>205</G>
+      <B>50</B>
+      <ScA>1</ScA>
+      <ScR>0.031896032</ScR>
+      <ScG>0.61049557</ScG>
+      <ScB>0.031896032</ScB>
+    </TaskColor>
+    <Date>2023-11-27T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
+  </Task>
+  <Task>
+    <TaskID>5</TaskID>
+    <Name>Install Office</Name>
+    <Description>Install Microsoft Office on the following computers listed below.</Description>
+    <TicketNumber>XXXXXXXX</TicketNumber>
+    <TaskColor>
+      <A>255</A>
+      <R>52</R>
+      <G>206</G>
+      <B>59</B>
+      <ScA>1</ScA>
+      <ScR>0.034339808</ScR>
+      <ScG>0.6172066</ScG>
+      <ScB>0.04373503</ScB>
+    </TaskColor>
+    <Date>2023-11-26T00:00:00-06:00</Date>
+    <Status xsi:type="xsd:int">-1</Status>
   </Task>
 </ArrayOfTask>
