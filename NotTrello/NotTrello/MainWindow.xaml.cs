@@ -26,11 +26,13 @@ namespace NotTrello
     /// </summary>
     public partial class MainWindow : Window
     {
-        string[] laneNames = new string[6];
+        string[] laneNames = new string[6]; // Names of lanes
         public MainWindow()
         {
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+            
+            // Create the lanes
             laneText0.Text = NotTrelloSettings.Default.LaneName0;
             laneText1.Text = NotTrelloSettings.Default.LaneName1;
             laneText2.Text = NotTrelloSettings.Default.LaneName2;
@@ -45,6 +47,7 @@ namespace NotTrello
             laneNames[4] = laneText4.Text;
             laneNames[5] = laneText5.Text;
 
+            // Load the tasks
             ReloadTasks();    
             
         }
@@ -54,19 +57,26 @@ namespace NotTrello
             return laneNames;
         }
         
+        // Reload the tasks
         private void ReloadTasks()
         {
+            // Read the tasks
             List<Task> tasks = XMLFileManagement.ReadTasks();
+            
+            // Default values
             int taskID = 0;
             int status = 0;
             Color taskColor = (Color)ColorConverter.ConvertFromString("LimeGreen");
             string taskName = "New Task";
-            for (int i = 0; i < tasks.Count; i++)
+
+            for (int i = 0; i < tasks.Count; i++) // Load each task
             {
                 taskID = tasks[i].TaskID;
                 taskName = tasks[i].Name;
                 taskColor = tasks[i].TaskColor;
                 status = (int)tasks[i].Status;
+
+                // Find in which lane to place the task
                 if (status == 0)
                 {
                     lane0.Children.Add(ReloadTask(taskID, taskName, taskColor));
@@ -93,9 +103,9 @@ namespace NotTrello
                 }
             }
 
-
         }
 
+        // Reload a task
         private Border ReloadTask(int taskID, string taskName, Color taskColor)
         {
             Style taskButtonStyle = (Style)FindResource("TaskButton") as Style;
@@ -111,6 +121,7 @@ namespace NotTrello
             return taskBorder;
         }
 
+        // Escape key to close window
         private void HandleEsc(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
@@ -129,50 +140,28 @@ namespace NotTrello
             }
         }
 
-
+        // Task button event
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Create task window
             TaskWindow taskWindow = new TaskWindow(sender);
             taskWindow.Save.Tag = ((Button)sender).Tag;
 
-            List<Task> tasks = XMLFileManagement.ReadTasks();
-            for (int i = 0; i < tasks.Count; i++)
+            List<Task> tasks = XMLFileManagement.ReadTasks(); // Read the tasks
+
+            for (int i = 0; i < tasks.Count; i++) // Find the current task
             {
                 if (tasks[i].TaskID == (int)taskWindow.Save.Tag)
                 {
+                    // Set the values for the task
                     taskWindow.taskName.Text = tasks[i].Name;
                     taskWindow.taskDescription.Text = tasks[i].Description;
                     taskWindow.ticketNumber.Text = tasks[i].TicketNumber;
                     taskWindow.taskColor.SelectedColor = tasks[i].TaskColor;
                     taskWindow.dateToggle.DisplayDate = tasks[i].Date;
-                    
                     int status = (int)tasks[i].Status;
                     taskWindow.taskPanel.Tag = status;
-                    string laneName = "";
-                    if (status == 0)
-                    {
-                        laneName = laneText0.Text;
-                    }
-                    else if (status == 1)
-                    {
-                        laneName = laneText1.Text;
-                    }
-                    else if (status == 2)
-                    {
-                        laneName = laneText2.Text;
-                    }
-                    else if (status == 3)
-                    {
-                        laneName = laneText3.Text;
-                    }
-                    else if (status == 4)
-                    {
-                        laneName = laneText4.Text;
-                    }
-                    else if (status == 5)
-                    {
-                        laneName = laneText5.Text;
-                    }
+                    string laneName = laneNames[status];
                     taskWindow.taskPanel.Content = laneName;
                     break;
                 }
@@ -182,11 +171,12 @@ namespace NotTrello
             taskWindow.Activate();
         }
 
+        // Add task button event
         private Border AddNewTask(int status)
         {
-            List<Task> tasks = XMLFileManagement.ReadTasks();
+            List<Task> tasks = XMLFileManagement.ReadTasks(); // Read the tasks
             int taskID = 0;
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count; i++) // Find the current task
             {
                 if (tasks[i].TaskID > taskID)
                 {
@@ -195,6 +185,7 @@ namespace NotTrello
             }
             taskID++;
 
+            // Create the button
             Style taskButtonStyle = (Style)FindResource("TaskButton") as Style;
             Style taskBorderStyle = (Style)FindResource("TaskBorder") as Style;
             Border taskBorder = new Border();
@@ -203,9 +194,10 @@ namespace NotTrello
             taskButton.Style = taskButtonStyle;
             taskButton.Tag = taskID;
 
+            // Add the task to the list
             Task task = new Task(taskID, status);
             tasks.Add(task);
-            XMLFileManagement.SaveTasks(tasks);
+            XMLFileManagement.SaveTasks(tasks); // Save the tasks
             
             taskBorder.Child = taskButton;
             return taskBorder;
@@ -240,7 +232,7 @@ namespace NotTrello
             lane5.Children.Add(AddNewTask(5));
         }
 
-
+        // Reset the task buttons in all lanes
         public void ResetLanes()
         {
             lane0.Children.Clear();

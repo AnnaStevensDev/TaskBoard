@@ -22,20 +22,18 @@ namespace NotTrello
     /// </summary>
     public partial class TaskWindow : Window
     {
-        object taskButton = null;
-        string[]laneNames = ((MainWindow) System.Windows.Application.Current.MainWindow).getLaneNames();
+        object taskButton = null; // Object for task button in main window
+        string[]laneNames = ((MainWindow) System.Windows.Application.Current.MainWindow).getLaneNames(); // Names of lanes in main window
 
         public TaskWindow(object sender)
         {
             InitializeComponent();
             for (int i = 0; i < laneNames.Length; i++)
             {
-                MoveComboBox.Items.Add(laneNames[i]);
+                MoveComboBox.Items.Add(laneNames[i]); // Initialize lane names
             }
 
-           
-
-            taskButton = sender;
+            taskButton = sender; // Initialize task button
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -47,6 +45,7 @@ namespace NotTrello
         // Save button event
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            // Get values from task window
             int taskID = (int)((Button)sender).Tag;
             string name = taskName.Text;
             string description = taskDescription.Text;
@@ -55,11 +54,12 @@ namespace NotTrello
             DateTime date = dateToggle.DisplayDate;
             object status = taskPanel.Tag;
 
+            // Read existing tasks
             List<Task> tasks = XMLFileManagement.ReadTasks();
             
             Task task = null;
             int t = 0;
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count; i++) // Find current task
             {
                 if (tasks[i].TaskID == taskID)
                 {
@@ -68,12 +68,12 @@ namespace NotTrello
                     break;
                 }
             }
-            if (task == null)
+            if (task == null) // If task does not exist, make one
             {
                 task = new Task(taskID, name, description, ticket, color, date, status);
                 tasks.Add(task);
             }
-            else
+            else // Update values of task
             {
                 tasks[t].Name = name;
                 tasks[t].Description = description;
@@ -82,14 +82,14 @@ namespace NotTrello
                 tasks[t].Date = date;
             }
 
-            if (taskButton != null)
+            if (taskButton != null) // Update task button values
             {
                 ((Button)taskButton).Background = new SolidColorBrush(color);
                 ((Button)taskButton).Content = name;
 
             }
 
-            XMLFileManagement.SaveTasks(tasks);
+            XMLFileManagement.SaveTasks(tasks); // Save the tasks to file
             
             
 
@@ -111,38 +111,49 @@ namespace NotTrello
 
         }
 
+        // Move task button event
         private void Move_Task(object sender, EventArgs e)
         {
+            // If no lane or current lane is selected from dropdown, return
             if(MoveComboBox.SelectedIndex == (int)taskPanel.Tag || MoveComboBox.SelectedIndex == -1)
             {
                 return;
             }
 
+            // Read the tasks
             int taskID = (int)Save.Tag;
             List<Task> tasks = XMLFileManagement.ReadTasks();
             int t = 0;
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count; i++) // Find the current task
             {
-                if (tasks[i].TaskID == taskID)
+                if (tasks[i].TaskID == taskID) 
                 {
                     t = i;
                     break;
                 }
             }
+
+            // Update the task status
             tasks[t].Status = MoveComboBox.SelectedIndex;
             taskPanel.Tag = MoveComboBox.SelectedIndex;
             taskPanel.Content = laneNames[MoveComboBox.SelectedIndex];
+
+            // Save the tasks
             XMLFileManagement.SaveTasks(tasks);
+
+            // Reload the main window task buttons
             ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
 
         }
 
+        // Delete task button event
         private void Delete_Task(object sender, RoutedEventArgs e)
         {
+            // Read the tasks
             int taskID = (int)Save.Tag;
             List<Task> tasks = XMLFileManagement.ReadTasks();
             int t = -1;
-            for (int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count; i++) // Find the current task
             {
                 if (tasks[i].TaskID == taskID)
                 {
@@ -152,10 +163,17 @@ namespace NotTrello
             }
             if (t != -1)
             {
-                tasks.RemoveAt(t);
+                tasks.RemoveAt(t); // Remove the task
             }
+
+            // Save the tasks
             XMLFileManagement.SaveTasks(tasks);
+
+            // Reload the main window task buttons
             ((MainWindow)System.Windows.Application.Current.MainWindow).ResetLanes();
+
+            // Close the window
+            this.Close();
         }
 
         
@@ -164,6 +182,7 @@ namespace NotTrello
 
         }
 
+        // Add activity button event
         private void Add_Activity(object sender, RoutedEventArgs e)
         {
 
