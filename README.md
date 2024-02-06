@@ -5,7 +5,7 @@ Contributers: Anna Stevens, Dayton McManus, Samuel Adams
 
 # Tools
 
-NotTrello was created using the Winforms library in Visual Studio, along with the Haley.WPF NuGet package. The languages used with this project were C# and XHtml.
+NotTrello was created using the Winforms library in Visual Studio, along with the Haley.WPF NuGet package. The languages used with this project were C# and Xaml.
 
 # Images
 
