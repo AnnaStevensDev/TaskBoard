@@ -1,7 +1,7 @@
 # NotTrello Taskboard
 This project was created as an alternative application to a Trello taskboard. It was designed specifically for the LeTourneau University IT department helpdesk TV display. 
 
-Contributers: Anna Stevens, Dayton McManus, Sammuel Adams
+Contributers: Anna Stevens, Dayton McManus, Samuel Adams
 
 # Tools
 
