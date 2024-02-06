@@ -12,6 +12,7 @@ NotTrello was created using the Winforms library in Visual Studio, along with th
 The task board's interface:
 ![image](https://github.com/AnnaStevensDev/TaskBoard/assets/128333519/4ee9f9cf-b9cf-4d60-87b3-cc901021a2a6)
 Task edit window:
-![image](https://github.com/AnnaStevensDev/TaskBoard/assets/128333519/e00f2c49-05d7-4892-bcbf-031764ea9e03)
+![image](https://github.com/AnnaStevensDev/TaskBoard/assets/128333519/c8272a98-eea4-419b-9caf-8f076d4d9713)
+
 
 
