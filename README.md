@@ -1,6 +1,15 @@
-# NotTrello
-Class Project for Software Engineering 2
+# NotTrello Taskboard
+This project was created as an alternative application to a Trello taskboard. It was designed specifically for the LeTourneau University IT department helpdesk TV display. 
 
-# This is the GitHub repo for our class project!
+Contributers: Anna Stevens, Dayton McManus, Sammuel Adams
 
-In order to work on the project, plase link your Visual Studio editor to your GitHub account and create a branch. Work on the files as needed, and then submit your changes by submitting a pull request.
+# Tools
+
+NotTrello was created using the Winforms library in Visual Studio, along with the Haley.WPF NuGet package. The languages used with this project were C# and XHtml.
+
+# Images
+
+
+![image](https://github.com/AnnaStevensDev/TaskBoard/assets/128333519/4ee9f9cf-b9cf-4d60-87b3-cc901021a2a6)
+![trello board 1](https://github.com/AnnaStevensDev/TaskBoard/assets/128333519/09ec9f36-5b16-48de-a599-46fb894fd3db)
+
